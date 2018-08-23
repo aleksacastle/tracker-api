@@ -10,6 +10,7 @@ gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'active_model_serializers', '~> 0.10.2'
 
 group :test do
   gem 'factory_bot_rails', '~> 4.0'
