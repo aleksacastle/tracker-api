@@ -57,6 +57,7 @@ RSpec.configure do |config|
   end
   config.infer_spec_type_from_file_location!
   config.include RequestSpecHelper, type: :request
+  config.include TokenSpecHelper
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:

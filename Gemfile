@@ -11,6 +11,7 @@ gem 'rails', '~> 5.2.1'
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'active_model_serializers', '~> 0.10.2'
+gem 'jwt', '~> 2.1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'pry'
