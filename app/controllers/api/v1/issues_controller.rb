@@ -4,51 +4,37 @@ module Api::V1
     before_action :set_issue, only: %w(show update destroy)
 
     def index
-      render json: issues
-    end
-
-    def show
-      render json: issue
+      @issues = Issue.all
+      json_response(@issues)
     end
 
     def create
-      new_issue = Issue.new(issue_params)
+      @issue = Issue.create!(issue_params)
+      json_response(@issue, :created)
+    end
 
-      if new_issue.save
-        render json: issue, status: :created
-      else
-        render json: issue.errors, status: :unprocessable_entity
-      end
+    def show
+      json_response(@issue)
     end
 
     def update
-      if issue.update(issue_params)
-        render json: issue
-      else
-        render json: issue.errors, status: :unprocessable_entity
-      end
+      @issue.update(issue_params)
+      head :no_content
     end
 
     def destroy
-      issue.destroy
+      @issue.destroy
+      head :no_content
     end
 
     private
 
-    def issues
-      @issues ||= Issue.all
-    end
-
-    def issue
-      @issue ||= set_issue
-    end
-
     def issue_params
-      params.permit(:title, :body, :status)
+      params.require(:issue).permit(:title, :body, :status, :user_id)
     end
 
     def set_issue
-      Issue.find(params[:id])
+      @issue = Issue.find(params[:id])
     end
   end
 end

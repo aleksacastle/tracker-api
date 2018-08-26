@@ -36,8 +36,8 @@ RSpec.describe 'Issue API', type: :request do
    end
 
    context 'when the record does not exist' do
+	   let(:issue_id) { 100 }
      it 'returns status code 404' do
-       issue_id = 100
        expect { get "/api/v1/issues/#{issue_id}", params: {}, headers: headers }.
 		       to raise_error(ActiveRecord::RecordNotFound)
      end
