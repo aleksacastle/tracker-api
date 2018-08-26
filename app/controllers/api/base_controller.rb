@@ -1,6 +1,5 @@
 module Api
-  class BaseController < ActionController::API
+  class BaseController < ApplicationController
     include ActionController::Serialization
-    include ExceptionHandler
   end
 end
