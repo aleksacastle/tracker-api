@@ -4,7 +4,7 @@ module Api::V1
     before_action :set_issue, only: %w(show update destroy)
 
     def index
-      @issues = Issue.all
+      @issues = Issue.paginate(page: params[:page], per_page: 25)
       json_response(@issues)
     end
 
