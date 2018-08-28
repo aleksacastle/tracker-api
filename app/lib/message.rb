@@ -30,4 +30,9 @@ class Message
 	def self.expired_token
 		'Sorry, your token has expired. Please login to continue.'
 	end
+
+	def self.welcome
+		'Welcome to Tracker Api. The site is under development. Thank you for understanding.
+		 To proceed with creating issues please register at /signup or login at auth/login'
+	end
 end

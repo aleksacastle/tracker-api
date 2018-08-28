@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
-	include ResponseHandler
 	include ExceptionHandler
+	include ResponseHandler
 
 	before_action :authorize_request
 	attr_reader :current_user
