@@ -1,12 +1,12 @@
 require 'faker'
 USERS = [
-		[ "user1", "user1@email.com", "user", "123456" ],
-		[ "user2", "user2@email.com", "user", "qwerty"],
-		[ "manager", "manager@email.com", "manager", "password" ]
+		[ "user1", "user1@email.com", false, "123456" ],
+		[ "user2", "user2@email.com", false, "qwerty"],
+		[ "manager", "manager@email.com", true, "password" ]
 ].freeze
 
-USERS.each do |name, email, role, password|
-	User.create!(name: name, role: role, email: email, password: password)
+USERS.each do |name, email, manager, password|
+	User.create!(name: name, manager: manager, email: email, password: password)
 end
 
 15.times do
