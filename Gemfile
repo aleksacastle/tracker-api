@@ -13,6 +13,7 @@ gem 'sqlite3'
 gem 'active_model_serializers', '~> 0.10.2'
 gem 'jwt', '~> 2.1'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'rack-cors', '~> 0.4.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'pry'
@@ -25,6 +26,7 @@ group :test do
   gem 'factory_bot_rails', '~> 4.0'
   gem 'faker'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'pundit-matchers', '~> 1.6.0'
 end
 
 group :development, :test do
